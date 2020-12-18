@@ -22,16 +22,17 @@ function splitIntoValues (n) {
 
 const arabic = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 const roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'  ]
-var romanCollector = [];
-var arabicReducer;
 
-var convertToRoman = (num) => {
+function convertToRoman(num) {
+ let romanCollector = [];
+ let arabicReducer;
+ let arabicIndex;
     while (num > 0) {
         arabicReducer = arabic.find(y => y <= num);
         romanCollector.push(roman[arabic.indexOf(arabicReducer)]);
         num -= arabicReducer;
     }
- return romanCollector.join('');
+ return romanCollector.reduce((a,b) => a + b)
 }
 
-console.log(convertToRoman(3999));
+convertToRoman(36);
