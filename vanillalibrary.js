@@ -36,3 +36,16 @@ function convertToRoman(num) {
 }
 
 convertToRoman(36);
+
+//Free Code Camp - JavaScript Algorithms and Data Structures Projects: Telephone Number Validator
+// I'm still concerned about it passing the format 1-(555)-555-5555  but it passed all the other tests.
+
+function telephoneCheck(str) {
+let phoneRegExp = /^(1*)(\s*-*)(\d{3}|\(\d{3}\))(\s*-*)(\d{3})(\s*-*)(\d{4})$/
+  if (str.match(phoneRegExp)) {
+    return true
+  }
+return false
+}
+
+telephoneCheck("1 (555)555-5555"); 
